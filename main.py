@@ -4,7 +4,7 @@ pygame.init()
 pygame.display.set_caption("The Northern Regalia")
 screen = pygame.display.set_mode((1080,1500))
 
-background = pygame.image.load('Hackathon/GameJam2023_TheNorthernRegalia/assets/BG.png')
+background = pygame.image.load('Hackathon/GameJam2023_TheNorthernRegalia/src/BG.png')
 running = True
 
 while running:

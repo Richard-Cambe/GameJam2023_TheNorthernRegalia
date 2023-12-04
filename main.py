@@ -17,6 +17,8 @@ running = True
 while running:
     #appliquer la fenetre du jeu
     screen.blit(background, (0,0))
+    
+    screen.blit(game.sword.image , game.sword.rect)
 
     #appliquer le sprite du joueur sur la fenetre du jeu
     screen.blit(game.player.image , game.player.rect)

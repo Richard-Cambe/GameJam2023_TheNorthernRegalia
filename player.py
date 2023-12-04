@@ -9,10 +9,10 @@ class Player(pygame.sprite.Sprite):
         self.max_health = 50
         self.attack = 10
         self.velocity = 3
-        self.image = pygame.image.load('Hackathon/GameJam2023_TheNorthernRegalia/src/KnightIdle.png')
+        self.image = pygame.image.load("GameJam2023_TheNorthernRegalia/src/boredhero.png")
         self.rect = self.image.get_rect()
         self.rect.x = 100
-        self.rect.y = 559
+        self.rect.y = 504
 
     def move_right(self):
         if not self.game.check_collision(self, self.game.all_monsters):

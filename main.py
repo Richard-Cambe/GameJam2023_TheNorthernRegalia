@@ -6,7 +6,7 @@ pygame.display.set_caption("The Northern Regalia")
 screen = pygame.display.set_mode((1080,720))
 
 #importer et charger l'arrière plan
-background = pygame.image.load('Hackathon/GameJam2023_TheNorthernRegalia/src/BG.png')
+background = pygame.image.load('GameJam2023_TheNorthernRegalia/src/BG.png')
 
 #charger le jeu
 
@@ -31,6 +31,7 @@ while running:
     
     for monster in game.all_monsters:
         monster.forward()
+        monster.update_health_bar(screen)
         
     #mettre a jour l'écran        
     pygame.display.flip()

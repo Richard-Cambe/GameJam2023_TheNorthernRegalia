@@ -9,6 +9,7 @@ screen = pygame.display.set_mode((1080,720))
 background = pygame.image.load('C:/Users/richa/OneDrive/Bureau/GAMEJAM/GameJam2023_TheNorthernRegalia/src/BG.png')
 
 #charger le jeu
+
 game = Game()
 running = True
 
@@ -26,7 +27,12 @@ while running:
     elif game.pressed.get(pygame.K_q) and game.player.rect.x > 0:
         game.player.move_left()
 
-    #mettre a jour l'écran
+    game.all_monsters.draw(screen)
+    
+    for monster in game.all_monsters:
+        monster.forward()
+        
+    #mettre a jour l'écran        
     pygame.display.flip()
 
     #si l'utilisateur ferme la fenetre du jeu:

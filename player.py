@@ -9,7 +9,7 @@ class Player(pygame.sprite.Sprite):
         self.max_health = 50
         self.attack = 10
         self.velocity = 3
-        self.image = pygame.image.load("GameJam2023_TheNorthernRegalia/src/boredhero.png")
+        self.image = pygame.image.load("./src/boredhero.png")
         self.rect = self.image.get_rect()
         self.rect.x = 100
         self.rect.y = 504

@@ -8,7 +8,7 @@ class Monster(pygame.sprite.Sprite) :
         self.health = 100
         self.max_health = 100
         self.attack = 10
-        self.image = pygame.image.load('C:/Users/richa/OneDrive/Bureau/GAMEJAM/GameJam2023_TheNorthernRegalia/src/KnightIdle.png')
+        self.image = pygame.image.load('./src/KnightIdle.png')
         self.rect = self.image.get_rect()
         self.rect.x = 1000
         self.rect.y = 559

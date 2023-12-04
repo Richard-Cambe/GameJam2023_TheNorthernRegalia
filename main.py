@@ -6,7 +6,7 @@ pygame.display.set_caption("The Northern Regalia")
 screen = pygame.display.set_mode((1080,720))
 
 #importer et charger l'arrière plan
-background = pygame.image.load('C:/Users/richa/OneDrive/Bureau/GAMEJAM/GameJam2023_TheNorthernRegalia/src/BG.png')
+background = pygame.image.load('Hackathon/GameJam2023_TheNorthernRegalia/src/BG.png')
 
 #charger le jeu
 

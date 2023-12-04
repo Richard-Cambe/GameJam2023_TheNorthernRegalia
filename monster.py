@@ -12,7 +12,7 @@ class Monster(pygame.sprite.Sprite) :
         self.rect = self.image.get_rect()
         self.rect.x = 1000
         self.rect.y = 559
-        self.velocity = 2
+        self.velocity = 1
         
     def forward(self):
         if not self.game.check_collision(self, self.game.all_players):

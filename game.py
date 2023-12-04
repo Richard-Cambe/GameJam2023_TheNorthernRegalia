@@ -7,11 +7,12 @@ class Game:
     
     def __init__ (self):
         #générer le joueur
-        self.player = Player()
-        self.pressed = {}
-        self.is_playing = False
+        self.all_players = pygame.sprite.Group()
+        self.player = Player(self)
         self.all_players.add(self.player)
+        #groupe de monstre
         self.all_monsters = pygame.sprite.Group()
+        self.pressed = {}        
         self.spawn_monster()
         
     def check_collision(self,sprite,group):

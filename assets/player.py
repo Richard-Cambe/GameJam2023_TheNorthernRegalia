@@ -8,22 +8,15 @@ class Player(pygame.sprite.Sprite):
         self.health = 100
         self.max_health = 100
         self.attack = 10
-        self.velocity = 3
+        self.velocity = 5
         self.image = pygame.image.load("./src/boredhero_sword.png")
         self.rect = self.image.get_rect()
         self.rect.x = 118
         self.rect.y = 505
         
-    def damage(self, amount):
+    def damageP(self, amount):
         if self.health - amount > amount:
             self.health -= amount
-        
-    def move_right(self):
-        if not self.game.check_collision(self, self.game.all_monsters):
-            self.rect.x += self.velocity
-
-    def move_left(self):
-        self.rect.x -= self.velocity
         
     def update_health_bar(self, surface):
         #definir une couleur pour la jauge de vie (rouge)
@@ -34,6 +27,13 @@ class Player(pygame.sprite.Sprite):
         pygame.draw.rect(surface,(60,63,60),[self.rect.x-20, self.rect.y, self.max_health, 5])
         pygame.draw.rect(surface, bar_color, bar_position)
         
-    def forward(self):
+    def forwardP(self):
         if self.game.check_collision(self, self.game.all_monsters):
-            self.game.monster.damage(self.attack)
+            self.game.monster.damageM(self.attack)
+
+    def move_right(self):
+        if not self.game.check_collision(self, self.game.all_monsters):
+            self.rect.x += self.velocity
+
+    def move_left(self):
+        self.rect.x -= self.velocity

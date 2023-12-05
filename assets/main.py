@@ -38,6 +38,7 @@ while running:
     for player in game.all_players:
         player.forwardP()
         player.update_health_bar(screen)
+        player.update_animation() 
         
     #vérifier si le joueur souhaite aller a gauche ou a droite
     if game.pressed.get(pygame.K_d) and game.player.rect.x < 750:
@@ -50,7 +51,15 @@ while running:
     for monster in game.all_monsters:
         monster.forwardM()
         monster.update_health_bar(screen)
-        
+        monster.update_animation()
+         
+    #afficher le compteur de score
+    font = pygame.font.SysFont("vivaldi", 30)
+    score_text = font.render(f"{game.score}", 1, (0, 0, 0))
+    score_bg = pygame.image.load("./src/gold_counter.png")
+    screen.blit(score_bg, (45, 625))
+    screen.blit(score_text, (160, 640))
+    
     #mettre a jour l'écran        
     pygame.display.flip()
 

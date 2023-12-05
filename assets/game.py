@@ -18,7 +18,9 @@ class Game:
         nbmonstre = random.randint(50,100)
         for i in range (nbmonstre):
             self.spawn_monster()
-        self.pressed = {}     
+        self.pressed = {}   
+        #initialiser le score
+        self.score = 0
         
             
     def check_collision(self,sprite,group):

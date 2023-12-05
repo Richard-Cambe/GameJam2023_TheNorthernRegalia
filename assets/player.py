@@ -1,9 +1,10 @@
 import pygame
+import animation
 
 #créer une classe qui va représenter le joueur:
-class Player(pygame.sprite.Sprite):
+class Player(animation.AnimateSprite):
     def __init__(self, game):
-        super().__init__()
+        super().__init__("boredhero_sword")
         self.game = game
         self.health = 100
         self.max_health = 100
@@ -30,6 +31,9 @@ class Player(pygame.sprite.Sprite):
     def forwardP(self):
         if self.game.check_collision(self, self.game.all_monsters):
             self.game.monster.damageM(self.attack)
+            
+    def update_animation(self):
+        self.animate()
 
     def move_right(self):
         if not self.game.check_collision(self, self.game.all_monsters):

@@ -77,7 +77,14 @@ while running:
         monster.forward()
         monster.update_health_bar(screen)
  
-    #mettre a jour l'écran        
+    #afficher le compteur de score
+    font = pygame.font.SysFont("vivaldi", 30)
+    score_text = font.render(f"{game.score}", 1, (0, 0, 0))
+    score_bg = pygame.image.load("./src/gold_counter.png")
+    screen.blit(score_bg, (45, 625))
+    screen.blit(score_text, (160, 640))
+
+    #mettre a jour l'écrand
     pygame.display.flip()
 
     #si l'utilisateur ferme la fenetre du jeu:

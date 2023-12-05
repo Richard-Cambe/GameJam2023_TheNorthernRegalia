@@ -16,6 +16,8 @@ class Game:
         self.all_monsters = pygame.sprite.Group()
         self.pressed = {}        
         self.spawn_monster()
+        #initialiser le score
+        self.score = 0
         
     def check_collision(self,sprite,group):
         return pygame.sprite.spritecollide(sprite, group, False, pygame.sprite.collide_mask)

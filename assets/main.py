@@ -62,8 +62,8 @@ while running:
     screen.blit(game.player.image , game.player.rect)
     for player in game.all_players:
         player.forward()
-        player.update_health_bar(screen)
-        
+        player.update_health_bar(screen) 
+        player.update_animation()      
 
     #vérifier si le joueur souhaite aller a gauche ou a droite
     if game.pressed.get(pygame.K_d) and game.player.rect.x < 750:
@@ -76,6 +76,7 @@ while running:
     for monster in game.all_monsters:
         monster.forward()
         monster.update_health_bar(screen)
+        monster.update_animation()
  
     #afficher le compteur de score
     font = pygame.font.SysFont("vivaldi", 30)

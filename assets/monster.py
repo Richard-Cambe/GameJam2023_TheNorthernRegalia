@@ -1,9 +1,10 @@
 import pygame
+import animation
 
-class Monster(pygame.sprite.Sprite) :
+class Monster(animation.AnimateSprite) :
 
     def __init__(self, game):
-        super().__init__()
+        super().__init__("skeleton")
         self.game = game
         self.health = 100
         self.max_health = 100
@@ -25,6 +26,9 @@ class Monster(pygame.sprite.Sprite) :
         #dessiner la jauge de vie
         pygame.draw.rect(surface, bar_color, bar_position)
 
+    #define function to update naimations
+    def update_animation(self):
+        self.animate()
 
     def forward(self):
         if not self.game.check_collision(self, self.game.all_players):

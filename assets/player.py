@@ -1,15 +1,15 @@
 import pygame
+import animation
 
 #créer une classe qui va représenter le joueur:
-class Player(pygame.sprite.Sprite):
+class Player(animation.AnimateSprite):
     def __init__(self, game):
-        super().__init__()
+        super().__init__("boredhero_sword")
         self.game = game
         self.health = 100
         self.max_health = 100
         self.attack = 10
         self.velocity = 3
-        self.image = pygame.image.load("./src/boredhero_sword.png")
         self.rect = self.image.get_rect()
         self.rect.x = 118
         self.rect.y = 505
@@ -21,6 +21,7 @@ class Player(pygame.sprite.Sprite):
     def move_right(self):
         if not self.game.check_collision(self, self.game.all_monsters):
             self.rect.x += self.velocity
+
 
     def move_left(self):
         self.rect.x -= self.velocity
@@ -34,6 +35,9 @@ class Player(pygame.sprite.Sprite):
         pygame.draw.rect(surface,(60,63,60),[self.rect.x-20, self.rect.y, self.max_health, 5])
         pygame.draw.rect(surface, bar_color, bar_position)
         
+    def update_animation(self):
+        self.animate()
+
     def forward(self):
         if self.game.check_collision(self, self.game.all_monsters):
             self.game.monster.damage(self.attack)

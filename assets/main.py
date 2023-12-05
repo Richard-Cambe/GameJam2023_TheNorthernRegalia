@@ -8,6 +8,7 @@ screen = pygame.display.set_mode((1080,720))
 #importer et charger l'arrière plan
 background = pygame.image.load('./src/BG.png')
 
+x_background = 0
 #charger le jeu
 
 game = Game()
@@ -16,12 +17,21 @@ running = True
 #tant que cette condition est vraie:
 while running:
     #appliquer la fenetre du jeu
-    screen.blit(background, (0,0))
+    print(x_background)
+    if x_background == -9372:
+        x_background += 0
+    else:
+        if game.player.rect.x >= 750:
+            x_background -= 1
     
-    screen.blit(game.sword.image , game.sword.rect)
-
+    screen.blit(background, (x_background,0))
+    
     #appliquer le sprite du joueur sur la fenetre du jeu
     screen.blit(game.player.image , game.player.rect)
+    for player in game.all_players:
+        player.forward()
+        player.update_health_bar(screen)
+        
 
     #vérifier si le joueur souhaite aller a gauche ou a droite
     if game.pressed.get(pygame.K_d) and game.player.rect.x < 750:
@@ -34,7 +44,7 @@ while running:
     for monster in game.all_monsters:
         monster.forward()
         monster.update_health_bar(screen)
-        
+ 
     #mettre a jour l'écran        
     pygame.display.flip()
 

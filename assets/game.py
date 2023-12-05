@@ -1,7 +1,6 @@
 import pygame
 from player import Player 
 from monster import Monster
-from sword import Sword
 
 #créer une classe qui représente le jeu:
 class Game:
@@ -11,10 +10,6 @@ class Game:
         self.all_players = pygame.sprite.Group()
         self.player = Player(self)
         self.all_players.add(self.player)
-        #générer épée
-        self.all_swords = pygame.sprite.Group()
-        self.sword = Sword(self)
-        self.all_swords.add(self.sword)
         #groupe de monstre
         self.all_monsters = pygame.sprite.Group()
         self.pressed = {}        
@@ -26,3 +21,7 @@ class Game:
     def spawn_monster(self):
         monster = Monster(self)
         self.all_monsters.add(monster)
+        
+    def spawn_player(self):
+        self.player = Player(self)
+        self.all_players.add(self.player)

@@ -12,7 +12,7 @@ class Monster(animation.AnimateSprite) :
         self.velocity = random.randint(3,5)      
         self.image = pygame.image.load('./src/skeleton.png')
         self.rect = self.image.get_rect()
-        self.rect.x = 1000 + random.randint(0,7000)
+        self.rect.x = 1000 + random.randint(0,15000)
         self.rect.y = 505
 
     def damageM(self, amount):

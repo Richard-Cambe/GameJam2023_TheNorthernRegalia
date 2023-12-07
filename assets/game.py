@@ -15,7 +15,7 @@ class Game:
         #groupe de monstre
         self.all_monsters = pygame.sprite.Group()
         self.monster = Monster(self)   
-        nbmonstre = random.randint(50,100)
+        nbmonstre = random.randint(50,150)
         for i in range (nbmonstre):
             self.spawn_monster()
         self.pressed = {}   
